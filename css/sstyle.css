@@ -201,6 +201,23 @@ table{
     animation-delay: 1.5s;
 }
 
+#table{
+    width: 100%;
+    height: auto;
+    background: none;
+    animation-name: animaciontabla;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animaciontabla {
+    0% {background: antiquewhite;}
+    25% {background: red;}
+    50% {background: cadetblue ;}
+    75%{background: yellow;}
+    100% { background: tomato;}
+}
+
 @keyframes mianimacion {
     0% {background: antiquewhite;}
     25% {background: red;}
