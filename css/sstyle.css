@@ -238,7 +238,7 @@ table{
 @media screen and (min-width:900px) {
     .gridContainer {
         grid-template-columns:100%;
-        grid-template-rows:1fr auto auto 0.5fr ;
+        grid-template-rows:0.3fr auto auto 0.1fr ;
         grid-template-areas: 
             "header header header header"
             "body body body body"
