@@ -224,7 +224,7 @@ table{
 
 @media screen and (min-width:600px) {
     .gridContainer{
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-rows: 0.5fr 0.3fr 5fr 1fr;
         grid-template-areas: 
         "header header"
