@@ -50,8 +50,7 @@ ul li a:hover{
 
 .footerPagina{
     display: flex;
-    gap: 100px;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .body{
@@ -212,6 +211,8 @@ table{
 
 @media screen and (min-width:300px) {
     .gridContainer{
+        grid-template-columns: 100%;
+        background-color: whitesmoke;
         grid-template-areas: 
         "header"
         "body"
