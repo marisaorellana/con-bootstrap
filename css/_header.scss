@@ -1,0 +1,9 @@
+@import "variables";
+.header{
+    font-size: 90px;
+    grid-area: header;
+    background-color: darkolivegreen;
+    &:hover{
+        color: $colorHover;
+    }
+}

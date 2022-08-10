@@ -1,4 +1,4 @@
-/**{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,11 +8,17 @@ html{
     height: 100%;
 }
 
+.container-fluid{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+
 ul{
     display: flex;
     list-style-type: none;
     row-gap: 200px;
-    margin-top: 70px;
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
@@ -29,6 +35,13 @@ ul li a:hover{
     background-color: salmon;
 }
 
+.menuHamburguesa{
+    display: grid;
+    background-color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+}
+
 .menuDeInicio{
     display: grid;
     grid-template-rows: auto auto auto auto;
@@ -37,11 +50,12 @@ ul li a:hover{
 
 .footerPagina{
     display: flex;
-    gap: 100px;
+    flex-direction: row;
     justify-content: center;
+    row-gap: 100px;
 }
 
-body{
+.body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3.2rem;
     min-height: 100%;
@@ -56,13 +70,11 @@ body{
     text-align: center;
 }
 .header{
-    font-size: 150px;
-    margin-top: 0;
-
+    font-size: 90px;
 }
 
 .header:hover{
-    color: tomato;
+    color: salmon;
 }
 
 
@@ -71,49 +83,37 @@ body{
     background-color: darkolivegreen;
 }
 
-.nav{
-    grid-area: nav;
+.body{
+    grid-area: body;
     background-color: darkkhaki;
 }
 
 .main{
     grid-area: main;
-    background-image: image url(/images/blancas\ fondo\ verde.jpg);
-}
-
-.side{
-    grid-area: side;
-    background-color: tomato;
-    font-size: 100px;
-    font-size: 230px;
 }
 
 .footer{
     grid-area: footer;
     background-color: slategrey;
 }
+.navbar-brand:hover{
+    color: red;
+}
 
 .gridContainer{
     display: grid;
     gap: 10px;
-    grid-template-columns: 15% 15% auto 15%;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 15% auto auto auto 20%;
     grid-template-areas: 
-    "header"
-    "nav"
+    "header" 
+    "body"
     "main"
-    "side"
+    "aside"
     "footer";
 }
-*/
 
-/*#imagen{
-    background-image: url(/images/verde\ con\ plantas.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: auto;
-}*/
-
-/*div{
+div{
     background: whitesmoke;
     width: auto;
 }
@@ -195,12 +195,29 @@ table{
 }
 
 #principal{
-    width: 200px;
-    height: 3000px;
+    width: 100%;
+    height: auto;
     background: antiquewhite;
     animation-name:mianimacion;
     animation-duration: 20s;
     animation-delay: 1.5s;
+}
+
+#table{
+    width: 100%;
+    height: auto;
+    background: none;
+    animation-name: animaciontabla;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animaciontabla {
+    0% {background: antiquewhite;}
+    25% {background: red;}
+    50% {background: cadetblue ;}
+    75%{background: yellow;}
+    100% { background: tomato;}
 }
 
 @keyframes mianimacion {
@@ -211,40 +228,45 @@ table{
     100% { background: tomato;}
 }
 
-@media (min-width: 300px) {
-    .gridContainer {
+@media screen and (min-width:300px) {
+    .footerPagina{
+        display: flex;
+        flex-direction: column;
+    }
+    .gridContainer{
+        grid-template-columns: 100%;
+        background-color: whitesmoke;
         grid-template-areas: 
-    "header"
-    "nav"
-    "main"
-    "side"
-    "footer";
+        "header"
+        "body"
+        "main"
+        "nav"
+        "footer";
+    }
+    
+}
+
+@media screen and (min-width:600px) {
+    .gridContainer{
+        grid-template-columns: 100%;
+        grid-template-rows: 0.5fr 0.3fr 5fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "body body"
+        "main main"
+        "footer footer ";
     }
 }
 
-
-@media (min-width: 600px) {
+@media screen and (min-width:900px) {
     .gridContainer {
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas: 
-            "header header"
-            "body body"
-            "side main"
-            "footer footer";
-        
-    }
-}
-
-@media (min-width: 900px) {
-    .gridContainer {
-        grid-template-columns: 15% 25% auto 10%;
-        grid-template-rows: 5% auto 200px;
+        grid-template-columns:100%;
+        grid-template-rows:0.3fr auto auto 0.1fr ;
         grid-template-areas: 
             "header header header header"
-            "nav main main side"
+            "body body body body"
+            "main main main main"
             "footer footer footer footer";
     }
+    
 }
-
-*/

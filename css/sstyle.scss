@@ -1,0 +1,232 @@
+@import "variables";
+@import "ul";
+@import "header";
+@import "body";
+
+$colorFooter: slategrey;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+.container-fluid{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.menuHamburguesa{
+    display: grid;
+    background-color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+}
+
+.menuDeInicio{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    padding: 10px 1px 5px 10px;
+}
+
+.footerPagina{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    row-gap: 100px;
+}
+
+.gridContainer > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: $colorFooter;
+}
+.navbar-brand:hover{
+    color: $colorHover;
+}
+
+.gridContainer{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 15% auto auto auto 20%;
+    grid-template-areas: 
+    "header" 
+    "body"
+    "main"
+    "aside"
+    "footer";
+}
+
+div{
+    background: whitesmoke;
+    width: auto;
+}
+
+img{
+    background:rgba(0, 0, 0, 0.75);
+    width: 50%;
+}
+
+#container{
+    margin: 150px 150pxpx;
+    height: 200px;
+}
+table{
+    background-color: cadetblue;
+    text-align: left;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#textoContacto{
+    color:black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.form-register{
+    width: 600px;
+    height: 800px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.form-register h4{
+    font-size: 50%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controls{
+    width: 100%;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #278562 ;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-register a:hover{
+    color: darkkhaki;
+    text-decoration: underline;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: salmon;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+#principal{
+    width: 100%;
+    height: auto;
+    background: antiquewhite;
+    animation-name:mianimacion;
+    animation-duration: 20s;
+    animation-delay: 1.5s;
+}
+
+#table{
+    width: 100%;
+    height: auto;
+    background: none;
+    animation-name: animaciontabla;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animaciontabla {
+    0% {background: antiquewhite;}
+    25% {background: red;}
+    50% {background: cadetblue ;}
+    75%{background: yellow;}
+    100% { background: tomato;}
+}
+
+@keyframes mianimacion {
+    0% {background: antiquewhite;}
+    25% {background: red;}
+    50% {background: cadetblue ;}
+    75%{background: yellow;}
+    100% { background: tomato;}
+}
+
+@media screen and (min-width:300px) {
+    .footerPagina{
+        display: flex;
+        flex-direction: column;
+    }
+    .gridContainer{
+        grid-template-columns: 100%;
+        background-color: whitesmoke;
+        grid-template-areas: 
+        "header"
+        "body"
+        "main"
+        "nav"
+        "footer";
+    }
+    
+}
+
+@media screen and (min-width:600px) {
+    .gridContainer{
+        grid-template-columns: 100%;
+        grid-template-rows: 0.5fr 0.3fr 5fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "body body"
+        "main main"
+        "footer footer ";
+    }
+}
+
+@media screen and (min-width:900px) {
+    .gridContainer {
+        grid-template-columns:100%;
+        grid-template-rows:0.3fr auto auto 0.1fr ;
+        grid-template-areas: 
+            "header header header header"
+            "body body body body"
+            "main main main main"
+            "footer footer footer footer";
+    }
+    
+}
