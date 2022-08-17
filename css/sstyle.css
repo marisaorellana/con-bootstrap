@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* variables */
+/* MAPAS */
 ul {
   display: flex;
   list-style-type: none;
@@ -16,10 +19,12 @@ ul li a a:hover {
   background-color: salmon;
 }
 
+/* variables */
+/* MAPAS */
 .header {
   font-size: 90px;
   grid-area: header;
-  background-color: blue;
+  background-color: darkolivegreen;
 }
 .header:hover {
   color: salmon;
@@ -203,6 +208,38 @@ table {
           animation-iteration-count: infinite;
 }
 
+.redes {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn, .newButton {
+  border: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 14px;
+}
+
+.titulos {
+  font-size: 1fr;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darksalmon;
+}
+
+.subtitulos {
+  font-size: 1.5fr;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.parra {
+  font-size: 0.05fr;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @-webkit-keyframes animaciontabla {
   0% {
     background: antiquewhite;
@@ -296,4 +333,69 @@ table {
     grid-template-rows: 0.3fr auto auto 0.1fr;
     grid-template-areas: "header header header header" "body body body body" "main main main main" "footer footer footer footer";
   }
+}
+@media screen and (max-width: 550px) {
+  /* operaciones */
+  .btn, .newButton {
+    width: 60px;
+    height: 59px;
+    font-size: 14px;
+    /* condicionales */
+    background-color: salmon;
+  }
+}
+.btn-1 {
+  width: 60px;
+  height: 60px;
+}
+
+.btn-2 {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-3 {
+  width: 20px;
+  height: 20px;
+}
+
+/* mapa */
+/* bucle each */
+.whatsapp {
+  background-color: salmon;
+}
+
+.facebook {
+  background-color: lightgreen;
+}
+
+.youtube {
+  background-color: lightyellow;
+}
+
+/* extend */
+.newButton {
+  background-color: lightyellow;
+}
+
+/* mixin sin parametros*/
+/* mixin con parámetros*/
+.btn-1 {
+  font-weight: bold;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  -webkit-text-decoration-color: green;
+          text-decoration-color: green;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+.btn-2 {
+  font-weight: bold;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  -webkit-text-decoration-color: orange;
+          text-decoration-color: orange;
+  -webkit-text-decoration-style: double;
+          text-decoration-style: double;
 }/*# sourceMappingURL=sstyle.css.map */

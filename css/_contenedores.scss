@@ -4,8 +4,6 @@
 @import "body";
 
 $colorFooter: slategrey;
-$tamanoBoton: 60px;
-$tamanoTipo: 14px;
 
 *{
     box-sizing: border-box;
@@ -174,38 +172,6 @@ table{
     animation-iteration-count: infinite;
 }
 
-.redes{
-    height: 60px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.btn{
-    border: 50%;
-    width: $tamanoBoton;
-    height: $tamanoBoton;
-    font-size: $tamanoTipo;
-}
-
-.titulos{
-    font-size: 1fr;
-    font-family: Arial, Helvetica, sans-serif;
-    color: darksalmon
-}
-
-.subtitulos{
-    font-size: 1.5fr;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.parra{
-    font-size: 0.05fr;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 @keyframes animaciontabla {
     0% {background: antiquewhite;}
     25% {background: red;}
@@ -263,67 +229,4 @@ table{
             "footer footer footer footer";
     }
     
-}
-
-@media screen and (max-width: 550px) {
-    /* operaciones */
-    .btn{
-        width: $tamanoBoton / 1;
-        height: $tamanoBoton - 1;
-        font-size: $tamanoTipo / 1;
-        /* condicionales */
-            @if $tamanoBoton / 2 <= 50px {
-            background-color: salmon;
-            }
-            @else if $tamanoBoton / 2 >= 50px {
-            background-color: #278562;        
-            }
-            @else {
-                background-color: aquamarine;
-            }
-        }
-    }
-@for $i from 1 through 3 {
-    .btn-#{$i}{
-        width: $tamanoBoton / $i;
-        height: $tamanoBoton / $i;
-    }
-}
-
-
-/* mapa */
-
-$redes: ( whatsapp: salmon, facebook: lightgreen, youtube: lightyellow);
-/* bucle each */
-@each $red, $color in $redes{
-    .#{$red}{
-        background-color: $color;
-    }
-}
-
-/* extend */
-.newButton {
-    @extend .btn;
-    background-color: map-get($redes, youtube);
-}
-/* mixin sin parametros*/
-@mixin negrita{
-    font-weight: bold;
-}
-/* mixin con parámetros*/
-@mixin subrayado($color, $style){
-    text-decoration:wavy;
-    text-decoration-color: $color;
-    text-decoration-style: $style; 
-}
-
-
-.btn-1{
-    @include negrita;
-    @include subrayado(green, dotted);
-}
-
-.btn-2{
-    @include negrita;
-    @include subrayado(orange, double);
 }
