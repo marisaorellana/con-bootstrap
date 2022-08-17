@@ -19,7 +19,7 @@ ul li a a:hover {
 .header {
   font-size: 90px;
   grid-area: header;
-  background-color: darkolivegreen;
+  background-color: blue;
 }
 .header:hover {
   color: salmon;
