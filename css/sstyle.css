@@ -132,6 +132,10 @@ table {
   font-size: 25px;
 }
 
+.nos{
+  filter:grayscale(100%) ;
+}
+
 .form-register {
   width: 600px;
   height: 800px;
